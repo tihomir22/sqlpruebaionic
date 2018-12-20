@@ -1,14 +1,36 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+     <ion-title>
+        Nombre equipos LOL
+     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+  <ion-item>
+     <button
+        class="add"
+        ion-button
+        item-right
+        icon-right
+        margin-bottom
+        color="primary"
+        (click)="addEntry()">
+           Add a technology
+           <ion-icon name="add"></ion-icon>
+     </button>
+  </ion-item>
+
+
+  <ion-item *ngFor="let item of items">
+     <h2>{{ item.name }} </h2>
+     <button
+        ion-button
+        color="primary"
+        item-right
+        (click)="viewEntry({ record: item })">Ver</button>
+  </ion-item>
+
+
 </ion-content>
